@@ -56,7 +56,7 @@ h1 {
 
 /* User Profile Name Text */
 h4 {
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 /* -------------------------- */
@@ -72,9 +72,19 @@ nav {
     height: 70px;
 }
 
+nav a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: all 0.5s;
+}
+    nav a:hover {
+        border-bottom: 3px solid #76c284;
+    }
+
 .icon-nav {
- height: 40px;
- margin: 0 10px;
+    height: 40px;
+    margin: 0 10px;
 }
 
 /* -------------------------- */
@@ -83,6 +93,7 @@ nav {
 .main {
     grid-area: main;
     display: grid;
+    margin: 10px 0;
 }
 
 /* Dashboard / Search */
@@ -110,51 +121,311 @@ nav {
     border-radius: 0 0 0 8px;
 }
 
-input {
+input,
+textarea {
     width: 100%;
     font-family: 'Roboto', sans-serif;
     font-size: 0.8em;
+    padding-left: 10px;
+    border: 1px solid #c4c4c4;
+    border-radius: 4px;
+}
+
+input {
+    height: 30px;
+}
+.main-header-search input {
+    border-radius: 4px 0 0 4px;
+    border-right: 0;
+}
+
+textarea {
+    margin-top: 10px;
+    padding-top: 5px;
 }
 
 ::placeholder {
     color: #c4c4c4;
 }
 
+/* Alert Notification */
+.alert {
+    display: flex;
+    background-color: #7478Ba;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.7em;
+    margin: 10px;
+    border-radius: 5px;
+}
+.alert-banner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.alert p {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 12px;
+}
+
+.alert p:nth-of-type(2){
+    font-weight: 700;
+    font-size: 1.1em;
+}
+.alert strong {
+    font-weight: 700;
+    margin: 0 5px;
+}
+
 /* Traffic Card */
 
 .traffic-header {
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.traffic-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.traffic-nav-link {
+    list-style-type: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.7em;
+    padding: 5px 10px;
+    color: #9d9c9c;
+}
+
+.active {
+    background-color: #76c284;
+    border-radius: 30px;
+    color: white;
+}
+
+/* Daily Traffic Card */ 
+
+.daily {
+    margin: 0 auto;
+    width: 90%;
+}
+
+/* Mobile Users */
+
+.mobile-users {
     margin: 0 auto;
     width: 90%;
 }
 
 /* Social Media Widget */
 
+.social-container {
+   margin: 0 auto;
+    width: 90%;
+}
 
 .social-card {
     display: flex;
-    margin: 10px;
-    padding: 10px;
+    align-items: center;
+    height: 100px;
+    margin: 10px auto;
     border: 1px solid #e8e8e8;
     background-color: #fbfbfb;
+    border-radius: 8px;
 }
 
 .social-image {
-    /* display: flex; */
     background-color: #7478Ba;
     border-radius: 50%;
-    height: 30px;
-    width: 30px;
+    height: 75px;
+    width: 75px;
     padding: 20px;
+    margin: 15px;
 }
 
     .social-image svg {
-        /* justify-content: center; */
-        /* align-items: center; */
+        height: 35px;
+        width: 35px;
     }
     .social-image svg path{
         fill: white;
     }
 
+.social-text {
+    margin: 10px;
+}
+
+.social-text p {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+.social-text p:nth-of-type(1) {
+    color: #7478Ba;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+.social-text p:nth-of-type(2) {
+    font-size: 2.5em;
+    font-weight: 200;
+}
+
+/* New Members */
+
+.members {
+    margin: 0 auto;
+    width: 90%; 
+}
+
+.members-container,
+.activity-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;  
+    border-bottom: 1px solid #d4d3d3; 
+    height: 60px;
+}
+    .members-container p {
+        font-size: 0.65em;
+        height: 15px;
+    }
+
+.profile-image {
+    border-radius: 50%;
+    height: 35px;
+
+}
+
+
+.members-text {
+    min-width: 200px;
+    padding: 5px;
+}
+    .members-container p,
+    .members-text p,
+    .members-text a,
+    .toggle-buttons p {
+        margin: 0px;
+        font-family: 'Roboto', sans-serif;
+        color: #868585;
+    }
+    .members-container p {
+        margin-left: auto;
+    }
+    .members-text p {
+        font-size: 0.75em;
+        color: #868585;
+    }
+    .members-text a {
+        font-size: 0.7em;
+        text-decoration: none; 
+        color: #7478Ba;
+    }
+
+    
+/* Recent Activity */
+
+.recent-activity {
+    margin: 0 auto;
+    width: 90%; 
+}
+.activity-container p:nth-of-type(2) {
+    font-size: 0.65em;
+}
+.arrow {
+    height: 10px;
+    margin-left: auto;
+}
+
+/* Message User */
+
+.message {
+    margin: 0 auto;
+    width: 90%; 
+}
+
+
+/* Settings */
+
+.settings {
+    margin: 0 auto;
+    width: 90%; 
+}
+
+/* Buttons */
+.button-primary,
+.button-disabled {
+    
+    width: 100%;
+    padding: 8px 0;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.7em;
+}
+.button-primary{
+    background-color: #7478ba;
+}
+
+.button-disabled{
+    background-color: #a9a9a9;
+}
+/* Button secondary */
+#save,
+#cancel {
+    width: 50%;
+}
+#save {
+    margin-right: 5px;
+}
+#cancel {
+    margin-left: 5px;
+}
+/* Settings Button */
+.settings-button {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.toggle-buttons {
+    margin-bottom: 10px;
+}
+
+.toggle-buttons p {
+    font-size: 0.65em;
+    padding: 15px 0;
+}
+
+/* Timezone */
+.timezone {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #c4c4c4;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    color: #bcbcbc;
+    font-size: 0.7em;
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url("../icons/icon-dropdown.svg");
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position-x: 98%;
+    background-position-y: center;
+
+    text-indent: 0.01px;
+    text-overflow: "";
+}
 
 /* General Avatar Settings */
 .avatar {
@@ -163,6 +434,7 @@ input {
     margin: 0 5px; 
 }
 
+/* General Formating */
 h3 {
     width: 100%;
     text-transform: uppercase;
@@ -175,6 +447,21 @@ h3 {
     color: #9d9c9c;
 }
 
+
+
+/* Chart Settings */
+.widget-container-full,
+.widget-container-half {
+    position: relative;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+
+
+
+
+/* Media Queries */
 
 @media (min-width: 768px) {
     /* Setting Grid Container */
@@ -211,9 +498,14 @@ h3 {
         grid-column: 1 / span 2;
     }
 
+    /* Chart Displays */
+    .widget-container-half {
+        position: relative;
+        width: 45vw;
+    }
     /* Social Stats */
     .social-container {
-        display: flex;
+        display: flex; 
         flex-wrap: wrap;
     }
 }
