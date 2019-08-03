@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+
 /* Setting Grid Container */
 .grid-container {
     display: grid;
