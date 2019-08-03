@@ -282,7 +282,7 @@ window.addEventListener('load', () => {
     // Sets Retrieved Public Profile Settings
     if (publicSet === 'true') {
         document.getElementById('public-profile').checked = 'true';
-    }
+    } 
 
     if (getTime === null) {
         timezone.firstElementChild.innerHTML = "Select a Timezone";
