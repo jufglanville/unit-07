@@ -44,16 +44,33 @@ h1 {
     display: flex;
     align-items: center;
     height: 100%;
-    margin: 0 10px;
+    margin-right: 10px;
 }
 
 /* Icon Settings */
 .icon-bell {
-    height: 40%;
+    height: 50%;
     padding: 5px;
-    border-right: 2px solid;
+}
+    .icon-bell:hover {
+        transform: rotate(10deg);
+    }
+
+.badge {
+    position: relative;
+    top: -10px;
+    right: 12px;
+    padding: 4px;
+    border-radius: 50%;
+    background: #76c284;
 }
 
+.modal-content {
+    color: black;
+}
+.modal-content .members-text {
+    min-width: 150px;
+}
 /* User Profile Name Text */
 h4 {
     font-size: 0.8em;
@@ -133,6 +150,10 @@ textarea {
 
 input {
     height: 30px;
+}
+.main-header-search {
+    width: 80%;
+    max-width: 350px;
 }
 .main-header-search input {
     border-radius: 4px 0 0 4px;
@@ -351,11 +372,19 @@ textarea {
     width: 90%; 
 }
 
+.awesomplete {
+    width: 100%;
+}
+
+.awesomplete > ul > li {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8em;
+}
 
 /* Settings */
 
 .settings {
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     width: 90%; 
 }
 
@@ -427,6 +456,80 @@ textarea {
     text-overflow: "";
 }
 
+/* Toggle Switch */
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 24px; /* 34px */
+}
+  
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px; /* 26px */
+    width: 16px; /* 26px */
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    background-color: #7478ba;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #7478ba;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(36px);
+    -ms-transform: translateX(36px);
+    transform: translateX(36px);
+}
+  
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.toggle-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    .toggle-button p {
+        width: 150px;
+    }
+
+
 /* General Avatar Settings */
 .avatar {
     height: 50%;
@@ -477,7 +580,12 @@ h3 {
     nav{
         flex-direction: column;
         justify-content: flex-start;
+        align-items: center;
         height: 100%;
+    }
+
+    nav a {
+        height: 90px;
     }
 
     .icon-nav {
@@ -508,4 +616,55 @@ h3 {
         display: flex; 
         flex-wrap: wrap;
     }
+    /* Message User */
+    .message {
+        margin-bottom: 20px;
+    }
+
+    /* Settings Toggle Buttons */
+    .toggle-buttons {
+        margin: 17px 0;
+    }
 }
+
+
+
+/* Modal Notification Bell */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    float: right;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
